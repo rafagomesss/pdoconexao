@@ -4,6 +4,7 @@
 	<legend>Form title</legend>
 
 	<div class="form-group">
+		<input type="hidden" name="id" value="<?=$userEncontrado->id?>">
 		<label for="">
 			Nome
 			<input type="text" name="name" class="form-control" value="<?=$userEncontrado->name?>">
