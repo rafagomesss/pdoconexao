@@ -2,7 +2,7 @@
 
 return [
 	"db" => [
-		'host' => 'localhost',
+		'host' => '127.0.0.1',
 		'dbname' => 'curso_pdo',
 		'username' => 'root',
 		'password' => '',

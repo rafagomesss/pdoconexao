@@ -1,15 +1,36 @@
 <?php
 
 use app\classes\Validation;
+use app\models\Post;
+use app\models\Transaction;
+use app\models\User;
+
 
 $validation = new Validation;
 $validate = $validation->validate($_POST);
 
-$user = new app\models\User;
+$transaction = new Transaction;
 
-$cadastrado = $user->insert($validate);
-
-if($cadastrado)
+$transaction->transactions(function() use ($transaction, $validate)
 {
-	header('Location: /');
-}
+
+	$transaction->model(User::class)->insert($validate);
+
+	$transaction->model(Post::class)->insert([
+		'title' => 'teste',
+		'user' => 5,
+		'description' => 'description teste',
+	]);
+
+
+});
+// $validation = new Validation;
+// $validate = $validation->validate($_POST);
+
+// $user = new app\models\User;
+// $cadastrado = $user->insert($validate);
+
+// if($cadastrado)
+// {
+// 	header('Location: /');
+// }
