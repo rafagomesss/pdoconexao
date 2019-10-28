@@ -6,6 +6,6 @@ return [
 		'dbname' => 'curso_pdo',
 		'username' => 'root',
 		'password' => '',
-		'charset' => 'utf8',
+		'charset' => 'utf8', 
 	]
 ];
